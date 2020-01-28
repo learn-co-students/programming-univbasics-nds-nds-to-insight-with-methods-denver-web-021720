@@ -1,9 +1,5 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
-
-# Find a way to accumulate the :worldwide_grosses and return that Integer
-# using director_data as input
-
 nds = directors_database
 def gross_for_director(dh)   #dh stands for director hash
 # Write a method that, given an NDS creates a new Hash
@@ -38,3 +34,15 @@ def directors_totals(nds)
 end
 return result
 end
+a= directors_totals(nds)
+puts a
+
+
+
+
+#pp nds
+#result={}
+#nod = nds[dname].length #number of directors_database
+#i=0# Director index
+
+#puts a
