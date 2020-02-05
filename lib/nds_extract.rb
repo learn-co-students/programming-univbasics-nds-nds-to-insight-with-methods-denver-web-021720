@@ -9,31 +9,29 @@ def gross_for_director(director_data)
   vm = director_data
   i = 0
   total = 0
-  result = []
-  while i < vm.length do 
-    j = 0
-    while j < vm[i][:movies].length do 
-      total += vm[i][:movies][j][:worldwide_gross]
-      j += 1
-    end
-    result << total
-    total = 0
+  while i < vm[:movies].length do 
+    total += vm[:movies][i][:worldwide_gross]
     i += 1
   end
-  return result
+  return total
 end
+
 
 # Write a method that, given an NDS creates a new Hash
 # The return value should be like:
 #
 # { directorOne => allTheMoneyTheyMade, ... }
-def directors_totals(nds)
+def directors_totals(nds)  #nds has multiple directors in
+  # pp nds
   result = {}
-  total = gross_for_director(director_data)
   i = 0
   while i < nds.length do 
-    result[nds[i][:name]] => total[i]
+    arug = nds[i]
+    total = gross_for_director(arug) 
+    result[nds[i][:name]] = total
+    i += 1
   end
+
   return result
 
 end
